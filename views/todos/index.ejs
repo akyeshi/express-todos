@@ -1,18 +1,15 @@
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Express To-Do</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-<body>
-  <h1>Todos</h1>
-  <ul>
-    <% todos.forEach(function(t) { %>
-      <li>
-        <a href="/todos/<%= t.id %>"><%= t.todo %></a>
-      </li>
+<%- include("../partials/header")  %>
+
+<ul>
+  
+  <% todos.forEach(function(t) { %>
+    <li>
+      <a href="/todos/<%= t.id %>"><%= t.todo %></a>
+    </li>
     <% }); %>
+    
+    
   </ul>
-</body>
-</html>
+  
+<%- include("../partials/footer")  %>
