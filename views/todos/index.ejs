@@ -2,7 +2,7 @@
 <%- include("../partials/header")  %>
 
 <ul>
-  
+  <a href="/todos/new">Add To-Do</a>
   <% todos.forEach(function(t) { %>
     <li>
       <a href="/todos/<%= t.id %>"><%= t.todo %></a>

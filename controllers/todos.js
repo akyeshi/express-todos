@@ -5,6 +5,8 @@ module.exports = {
   // second index is the name of the function below
   index: index,
   show,
+  new: newTodo, 
+  create
 };
 
 function show(req, res) {
@@ -25,4 +27,16 @@ function index(req, res) {
     todos: Todo.getAll(),
     title: "All To-Dos",
   });
+}
+
+function newTodo(req, res){
+  res.render("todos/new", {title: 'New Todo'})
+}
+
+function create(req, res){
+  console.log(req.body); 
+  // the model is responsible for creating data 
+  Todo.create(req.body); 
+  // do a redirect anytime data is changed i.e. post/put 
+  res.redirect('/todos'); 
 }
